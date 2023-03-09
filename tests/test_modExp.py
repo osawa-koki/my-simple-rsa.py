@@ -1,5 +1,5 @@
 import pytest
-from app.fn_modExp import modExp
+from app.fn_modExp import mod_exp
 
 @pytest.mark.parametrize(
     "inputs, expected_output",
@@ -17,4 +17,4 @@ from app.fn_modExp import modExp
     ],
 )
 def test_modExp(inputs, expected_output):
-    assert modExp(*inputs) == expected_output
+    assert mod_exp(*inputs) == expected_output
