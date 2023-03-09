@@ -9,7 +9,7 @@ def decrypt(private_key: Tuple[int, int], encrypted: str) -> str:
     Returns:
         str: 復号されたデータ。
     """
-    
+
     n, d = private_key
     block_size = len(str(n)) - 1
     encrypted_blocks = [
