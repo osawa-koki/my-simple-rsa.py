@@ -1,5 +1,5 @@
 import pytest
-from app.fn_isPrime import isPrime
+from app.fn_isPrime import is_prime
 
 @pytest.mark.parametrize(
     "input, expected_output", [
@@ -25,4 +25,4 @@ from app.fn_isPrime import isPrime
     ]
 )
 def test_is_prime(input, expected_output):
-    assert isPrime(input) == expected_output
+    assert is_prime(input) == expected_output

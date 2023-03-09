@@ -1,5 +1,5 @@
 
-def isPrime(n: int) -> bool:
+def is_prime(n: int) -> bool:
     """
     受け取った数値が素数かどうかを判定します。
 
