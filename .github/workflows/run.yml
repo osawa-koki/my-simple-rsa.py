@@ -1,0 +1,45 @@
+name: Run RSA encrypt-decrypt app
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10']
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Test
+        run: pytest
+  run:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10']
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run
+        run: |
+          echo "----- ----- ----- ----- -----"
+          python ./main.py --prime1 11 --prime2 13 --message "Hello World!!!"
+          echo "----- ----- ----- ----- -----"
+          python ./main.py --prime1 17 --prime2 53 --message "こんにちは！"
+          echo "----- ----- ----- ----- -----"
+          python ./main.py --prime1 29 --prime2 71 --message "電気計算機の発明により、世界は変わった。"
+          echo "----- ----- ----- ----- -----"
+          python ./main.py --prime1 991 --prime2 997 --message "Loving RSA, loving Python, loving GitHub Actions!"
+          echo "----- ----- ----- ----- -----"
