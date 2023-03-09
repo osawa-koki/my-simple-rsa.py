@@ -1,6 +1,6 @@
 
 import pytest
-from app.fn_getPublicKey import getPublicKey
+from app.fn_getPublicKey import get_public_key
 
 @pytest.mark.parametrize(
     "p, q, expected",
@@ -13,4 +13,4 @@ from app.fn_getPublicKey import getPublicKey
     ]
 )
 def test_get_public_key(p, q, expected):
-    assert getPublicKey(p, q) == expected
+    assert get_public_key(p, q) == expected

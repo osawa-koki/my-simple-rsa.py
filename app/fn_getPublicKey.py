@@ -1,7 +1,7 @@
 from typing import Union, Tuple
 from app.fn_gcd import gcd
 
-def getPublicKey(p: int, q: int) -> Union[Tuple[int, int], None]:
+def get_public_key(p: int, q: int) -> Union[Tuple[int, int], None]:
     """
     2つの素数を受け取り、公開鍵を返します。
 
