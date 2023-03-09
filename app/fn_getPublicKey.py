@@ -22,6 +22,7 @@ def get_public_key(p: int, q: int) -> Union[Tuple[int, int], None]:
         >>> get_public_key(2, 2)
         None
     """
+
     n = p * q
     phi = (p - 1) * (q - 1)
     e = 65537  # The default value for the public exponent.

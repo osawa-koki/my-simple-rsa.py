@@ -13,6 +13,7 @@ def get_private_key(p: int, q: int, public_key: tuple[int, int]) -> tuple[int, i
     Returns:
     tuple[int, int] or None - 秘密鍵(n, d)。pとqが同じ場合、Noneを返します。
     """
+
     n, e = public_key
     phi = lcm(p - 1, q - 1)
     d = mod_inv(e, phi)
