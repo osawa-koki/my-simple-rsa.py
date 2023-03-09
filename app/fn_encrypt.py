@@ -1,4 +1,7 @@
+import math
+import urllib
 from typing import Tuple
+from app.fn_modExp import mod_exp
 
 def encrypt(public_key: Tuple[int, int], message: str) -> str:
     """指定された公開鍵でデータを暗号化します。
@@ -12,9 +15,18 @@ def encrypt(public_key: Tuple[int, int], message: str) -> str:
 
     """
 
-    _message = message.encode('utf-8').hex()
+    _message = urllib.parse.quote(message)
     n, e = public_key
-    block_size = n.bit_length() // 8 - 1
-    blocks = [int(_message[i:i+block_size], 16) for i in range(0, len(_message), block_size)]
-    encrypted_blocks = [str(pow(num, e, n)).zfill(block_size+1) for num in blocks]
+    block_size = math.floor(math.log10(n) / math.log10(2)) - 1
+    blocks = [
+        block.zfill(block_size)
+        for block in [
+            str(ord(char))
+            for char in _message
+        ]
+    ]
+    encrypted_blocks = [
+        str(mod_exp(int(block), e, n)).zfill(block_size + 1)
+        for block in blocks
+    ]
     return ''.join(encrypted_blocks)
