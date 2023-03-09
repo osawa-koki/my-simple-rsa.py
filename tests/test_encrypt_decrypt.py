@@ -1,4 +1,3 @@
-
 import random
 from app.fn_decrypt import decrypt
 from app.fn_encrypt import encrypt

@@ -1,4 +1,3 @@
-
 import pytest
 from app.fn_gcd import gcd
 
