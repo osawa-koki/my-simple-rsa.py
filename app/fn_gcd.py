@@ -13,6 +13,7 @@ def gcd(a: int, b: int) -> int:
     Raises:
         ValueError: 引数が正の整数でない場合に発生します。
     """
+    
     if a < 0 or b < 0:
         raise ValueError('引数は正の整数である必要があります。')
     if not isinstance(a, int) or not isinstance(b, int):
