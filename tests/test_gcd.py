@@ -1,6 +1,6 @@
 
 import pytest
-from app.gcd import gcd
+from app.fn_gcd import gcd
 
 @pytest.mark.parametrize("x, y, expected_output", [
     (2, 3, 1),
