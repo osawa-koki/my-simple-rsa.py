@@ -1,6 +1,6 @@
 import random
-from app.fn_decrypt import decrypt
 from app.fn_encrypt import encrypt
+from app.fn_decrypt import decrypt
 from app.fn_getPrivateKey import get_private_key
 from app.fn_getPublicKey import get_public_key
 
