@@ -1,5 +1,5 @@
 import math
-import urllib
+from urllib.parse import quote
 from typing import Tuple
 from app.fn_modExp import mod_exp
 
@@ -15,7 +15,7 @@ def encrypt(public_key: Tuple[int, int], message: str) -> str:
 
     """
 
-    _message = urllib.parse.quote(message)
+    _message = quote(message)
     n, e = public_key
     block_size = math.floor(math.log10(n) / math.log10(2)) - 1
     blocks = [
