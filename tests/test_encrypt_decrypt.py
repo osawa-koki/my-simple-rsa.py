@@ -12,10 +12,17 @@ messages = [
     "a",
     "b",
     "c",
+    "abc",
+    "***",
+    "+++",
+    "   ",
+    "あいうえお",
+    "カキクケコ",
+    "電子計算機",
 ]
 
 def test_Encrypt_Decrypt():
-    for _ in range(10):
+    for _ in range(100):
         prime1 = random.choice(primes)
         prime2 = random.choice(primes)
         message = random.choice(messages)
