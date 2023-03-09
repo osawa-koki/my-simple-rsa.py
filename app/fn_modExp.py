@@ -1,5 +1,5 @@
 
-def modExp(a: int, b: int, m: int) -> int:
+def mod_exp(a: int, b: int, m: int) -> int:
     """
     高速なmod演算を用いてa^b(mod m)を計算します。
     Args:
